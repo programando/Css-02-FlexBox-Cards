@@ -26,6 +26,7 @@ img {
     max-width: 100%;
 }
 
+/* para cuando el dispositivo sea menor a esta resolución */
 @media screen and (min-width:480px) {
     .contenido-principal {
         display: flex;

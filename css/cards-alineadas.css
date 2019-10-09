@@ -1,0 +1,134 @@
+/* 
+    https://webdesign.tutsplus.com/es/tutorials/solving-problems-with-css-grid-and-flexbox-the-card-ui--cms-27468
+*/
+
+body {
+    /* Cuando agregamos padding no afecta el acho de nuestros elmentos*/
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+   
+}
+
+html {
+    background: #f5f7f8;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: 20px 0;
+  }
+  
+.card-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+/* 
+    A continuación declaramos que la tarjeta debe ser display: flex;. Esto es importante – vamos a alinear los contenidos de la tarjeta verticalmente, empleando para ello Flexbox. Por lo tanto, también vamos a declarar flex-direction: column; para que nos proporcione nuestro eje vertical. Por último declaramos min-height: 100%; a fin de que todas las cartas llenen la altura del padre
+*/
+.item-card {
+    background: white;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 1rem;
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+    cursor: pointer;
+}
+
+/*
+    Después, en el estado hover, desplazaremos la tarjeta un poco hacia arriba y haremos la sombra más pronunciada:
+*/
+.item-card:hover {
+    top: -10px;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+  }
+
+  /* para cuando el dispositivo sea menor a esta resolución */
+@media only screen and (min-width:576px) {
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    /* hacer que para esta medida hayan dos imagenes por linea */
+    .item-card {
+        flex: 0 1 calc(50% - 1rem);
+    }
+}
+
+@media only screen and (min-width:768px) {
+    /* hacer que para esta medida hayan 4 imagenes por linea */
+    .item-card {
+        flex: 0 1 calc(23% - 1rem);
+    }
+}
+/*
+    da un espaciado interno 
+    */
+.item-card article {
+    padding: 20px;
+  }
+
+/* typography */
+.card h1 {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+  }
+
+/*
+  interlineado del parrafo
+*/
+  .card p { 
+    line-height: 1.4;
+  }
+
+  .card span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin: 2em 0 0 0;
+  }
+/*
+    Cada miniatura se aplicará como imagen de fondo, así que vamos a añadir algo de código en los paneles, como este:
+        <div class="thumb" style="background-image: url(thumb.jpg);"></div>
+    Ahora nos aseguraremos que los divs .thumb tengan ciertas dimensiones, y que las imágenes de fondo las cubran corre
+*/
+  .card .thumb {
+    padding-bottom: 60%;
+    background-size: cover;
+    background-position: center center;
+  }
+  .item-card .card article h1 {
+      border: 1px solid ;
+  }
+
+ .content {
+    padding: 20px; 
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between; 
+  }
+
+ .card  p { 
+    flex: 1 ; /* make p grow to fill available space*/
+    line-height: 1.4;
+    border: 1px solid;
+
+  }
+
+  span {
+      border: 1px solid;
+  }
+   
+

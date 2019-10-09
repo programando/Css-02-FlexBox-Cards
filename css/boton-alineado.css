@@ -1,0 +1,66 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+.card {
+    border: 1px solid #ccc;
+    margin: 10px 10px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+button {
+    height: 40px;
+    background: #fff;
+    padding: 0 40px;
+    border: 1px solid #000;
+}
+p:last-child {
+    text-align: center;
+    margin-top: auto;
+}
+
+img{
+    max-width: 100%;
+    width: 25%;
+}
+
+/* Para mover los botones a la parte inferior del bloque, debemos aplicar display: flex; a la propia tarjeta con la dirección configurada a column . Después de eso, debemos seleccionar el último elemento dentro de la tarjeta y establecer el margin-top en auto . Esto empujará el último párrafo a la parte inferior de la tarjeta y logrará el resultado requerido.
+*/
+
+ /* 
+    "row", los elementos se alinean horizontalmente
+   "wrap", si no caben forman otra linea
+    #elemento{
+        display:flex;
+        flex-flow:row wrap;
+        justify-content:center;
+        align-items:center;
+    }
+*/
+
+ /* se añade a todos los elemento por defecto
+*{
+    overflow: auto;
+   
+  }
+  */
+  
+  
+  /* los elementos que se salgan del padre seran recortados
+  #elemento{
+    overflow: hidden;
+  }
+  */
+
+/*
+  *{
+    position: relative;  posicionamiento con respecto al padre
+      height: auto; crecimiento con respecto al contenido
+      display: block; te ahorras comportamientos propios de ciertos elementos
+                   *se anula con display:inline-block;
+    
+  }
+  */
+  
+
